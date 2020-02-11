@@ -54,7 +54,7 @@ def partition_matrix(matrix, n):
     :returns: list -- list of the partitions
     """
     height, width = matrix.shape
-    y_stride, x_stride = height / n, width / n
+    y_stride, x_stride = height // n, width // n
 
     partitions = [matrix]
     for y in range(0, y_stride * n, y_stride):

@@ -12,7 +12,7 @@ class StatModel(object):
 
     def load(self, model_file):
         self.model_file = model_file
-        self.model.load(model_file)
+        self.model = cv2.ml.SVM_load(model_file)
 
     def save(self, model_file):
         self.model.save(model_file)
@@ -23,7 +23,7 @@ class SVM(StatModel):
     def __init__(self):
         """Initializes an SVM"""
         super(SVM, self).__init__()
-        self.model = cv2.SVM()
+        self.model = cv2.ml.SVM_create()
 
     def train(self, samples, labels):
         """Trains the SVM from a list of samples and their associated labels
@@ -42,7 +42,10 @@ class SVM(StatModel):
         :param sample: the sample to classify
         :returns: numpy.float32
         """
-        return self.model.predict(sample, True)
+        if not sample.shape[0] == 1:
+            sample = sample.reshape((1, sample.shape[0]))
+        prediction = self.model.predict(sample, True)
+        return prediction[1][0]
 
     def __getstate__(self):
         """Get the current state of the object, namely the file path to
