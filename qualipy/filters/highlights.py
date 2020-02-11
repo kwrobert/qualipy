@@ -20,7 +20,7 @@ import cv2
 from ..utils.image_utils import read_image
 from ..utils.histogram_analyzation import *
 
-from filter import Filter
+from .filter import Filter
 
 
 def count_areas(contours, num_sides=7, area_size=50):

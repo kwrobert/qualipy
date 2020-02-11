@@ -4,7 +4,7 @@ import numpy
 import cv2
 
 from .. import get_data
-from svm_filter import SVMFilter
+from .svm_filter import SVMFilter
 
 from ..utils.image_utils import read_color_image
 from ..utils.utils import scaled_prediction
@@ -41,8 +41,8 @@ def count_dispersion(image):
 def load_image_pixel_location_data(gray_image):
     location_data_list = []
 
-    for y in xrange(gray_image.shape[0]):
-        for x in xrange(gray_image.shape[1]):
+    for y in range(gray_image.shape[0]):
+        for x in range(gray_image.shape[1]):
             location_data_list.append((x, y, gray_image[y, x]))
 
     return location_data_list
@@ -51,14 +51,14 @@ def load_image_pixel_location_data(gray_image):
 def get_original_image_data(location_data, original_image):
     image_data = []
 
-    for i in xrange(len(location_data)):
+    for i in range(len(location_data)):
         original_pixel = original_image[location_data[i][1], location_data[i][0]]
         image_data.append(original_pixel)
 
     original_shape = len(image_data)
     if original_shape % 6 != 0:
         add_to = 6 - (original_shape % 6)
-        for i in xrange(add_to):
+        for i in range(add_to):
             image_data.append([0, 0, 0])
 
     as_image = numpy.array(image_data)
@@ -108,7 +108,7 @@ def sum_of_areas_with_high_rise_rate(image):
     current_area_size = 0
     current_cap = 0
 
-    for i in xrange(continuous_distribution_derivate.shape[0]):
+    for i in range(continuous_distribution_derivate.shape[0]):
         # Calculate derivate
         derivate = continuous_distribution_derivate[i]
 

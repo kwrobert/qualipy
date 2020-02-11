@@ -45,7 +45,7 @@ def process(images, filters, ROIs=None, return_predictions=False,
         filters.sort(key=attrgetter('speed'))
 
     # process single image
-    if isinstance(images, str) or isinstance(images, unicode):
+    if isinstance(images, str) or isinstance(images, str):
         return {images: __process_image(images, filters, ROIs,
                                         return_predictions, combine_results)}
 
@@ -162,7 +162,7 @@ def __get_argument(request, arg_name, default):
 
 def __parse_images_and_ROIs(request_images):
     images, ROIs = [], []
-    for image, ROI in request_images.iteritems():
+    for image, ROI in request_images.items():
         if ROI is None or (isinstance(ROI, list) and len(ROI) == 4):
             images.append(image)
             ROIs.append(None if ROI is None else tuple(ROI))
@@ -173,7 +173,7 @@ def __parse_images_and_ROIs(request_images):
 
 def __collect_filters(request_filters, filter_classes):
     filters = []
-    for filter_name, params in request_filters.iteritems():
+    for filter_name, params in request_filters.items():
         filter_obj = __get_filter(filter_name, filter_classes)
         if filter_obj is None:
             raise ValueError

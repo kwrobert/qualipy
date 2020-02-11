@@ -20,7 +20,7 @@ import numpy
 from ..utils.image_utils import read_image
 from ..utils.object_extraction import extract_object
 
-from filter import Filter
+from .filter import Filter
 
 
 def count_threshold(saliency_map):

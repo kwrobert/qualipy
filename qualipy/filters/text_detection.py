@@ -9,7 +9,7 @@ longer than one then there is considered to be a text in the image.
 
 from ..utils.tesseract import img_to_str
 
-from filter import Filter
+from .filter import Filter
 
 
 class TextDetection(Filter):
@@ -51,7 +51,7 @@ class TextDetection(Filter):
                   return_boolean parameter
         """
         if not (isinstance(image_path, str) or
-                isinstance(image_path, unicode)):
+                isinstance(image_path, str)):
             raise TypeError("image_path must be a string")
 
         if len(img_to_str(self.tesseract_path, image_path)) > 1:

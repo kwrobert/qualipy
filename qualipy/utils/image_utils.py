@@ -7,7 +7,7 @@ import cv2
 import numpy
 import exifread
 
-from utils import file_cache
+from .utils import file_cache
 
 
 @file_cache
@@ -31,7 +31,7 @@ def read_color_image(image_path, ROI=None):
     :returns: numpy.ndarray
     """
     if not (isinstance(image_path, str) or
-            isinstance(image_path, unicode)):
+            isinstance(image_path, str)):
         raise TypeError("image_path should be a string, not %s" %
                         type(image_path))
 

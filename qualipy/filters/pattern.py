@@ -24,7 +24,7 @@ import numpy
 from ..utils.image_utils import *
 from ..utils.statistic_common import *
 
-from filter import Filter
+from .filter import Filter
 
 
 def distances_from_center(height, width):

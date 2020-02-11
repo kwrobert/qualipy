@@ -13,7 +13,7 @@ import cv2
 from ..utils.image_utils import read_image
 from ..utils.utils import clipping_percentage
 
-from filter import Filter
+from .filter import Filter
 
 
 def normalized_clipping_percentage(image):

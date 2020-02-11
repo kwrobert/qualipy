@@ -17,7 +17,7 @@ import cv2
 import numpy
 
 from ..utils.image_utils import read_image
-from filter import Filter
+from .filter import Filter
 
 
 def findContours(image):

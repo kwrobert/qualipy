@@ -32,7 +32,7 @@ from ..utils.result_combination import collective_result
 from ..utils.utils import *
 from ..utils.image_utils import read_image, sharpen, read_exif_tags
 
-from svm_filter import SVMFilter
+from .svm_filter import SVMFilter
 
 
 def get_input_vector(img):

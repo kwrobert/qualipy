@@ -19,7 +19,7 @@ from ..utils.image_utils import read_image
 from ..utils.histogram_analyzation import normalize, largest, calculate_peak_value
 from ..utils.statistic_common import linear_normalize
 
-from filter import Filter
+from .filter import Filter
 
 
 def get_input_vector(img):

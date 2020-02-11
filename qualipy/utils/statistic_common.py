@@ -96,7 +96,7 @@ def remove_anomalies(array_1D, max_outline_diff):
     k = 4
 
     # count outline factors
-    for i in xrange(sorted_array.shape[0]):
+    for i in range(sorted_array.shape[0]):
         neighbors = find_neighbors(i, k, sorted_array)
         outlier_factor = count_local_outlier_factor(sorted_array[i], neighbors)
         outlier_factors = numpy.append(outlier_factors, outlier_factor)

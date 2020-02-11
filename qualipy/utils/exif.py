@@ -2,7 +2,7 @@
 Contains functionality for analyzing the exif data of an image.
 """
 
-from __future__ import division
+
 
 import math
 import exifread

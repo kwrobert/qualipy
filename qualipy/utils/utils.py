@@ -57,8 +57,8 @@ def partition_matrix(matrix, n):
     y_stride, x_stride = height / n, width / n
 
     partitions = [matrix]
-    for y in xrange(0, y_stride * n, y_stride):
-        for x in xrange(0, x_stride * n, x_stride):
+    for y in range(0, y_stride * n, y_stride):
+        for x in range(0, x_stride * n, x_stride):
             partitions.append(matrix[y : y + y_stride,
                                      x : x + x_stride])
 

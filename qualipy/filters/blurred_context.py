@@ -26,7 +26,7 @@ from .. import get_data
 from ..utils.image_utils import read_image, resize, read_exif_tags
 from ..utils.utils import partition_matrix, scaled_prediction, jit
 
-from svm_filter import SVMFilter
+from .svm_filter import SVMFilter
 
 
 @jit

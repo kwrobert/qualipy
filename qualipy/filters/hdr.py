@@ -31,7 +31,7 @@ from ..utils.utils import *
 from ..utils.image_utils import read_color_image
 from .. import get_data
 
-from svm_filter import SVMFilter
+from .svm_filter import SVMFilter
 
 
 def histogram_features(hist, maximum, step):
@@ -47,7 +47,7 @@ def histogram_features(hist, maximum, step):
     """
     means, maxes, max_diffs = [], [], []
 
-    for i in xrange(step, maximum, step):
+    for i in range(step, maximum, step):
         view = hist[i - step:i]
         means.append(numpy.mean(view))
         maxes.append(numpy.max(view))

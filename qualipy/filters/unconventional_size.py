@@ -5,7 +5,7 @@ to be of unconventional size by default.
 """
 
 from ..utils.image_utils import read_image
-from filter import Filter
+from .filter import Filter
 
 
 class UnconventionalSize(Filter):

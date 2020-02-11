@@ -216,7 +216,7 @@ def calculate_peak_value(histogram):
                        calculate_local_minimums(histogram)
     local_end_points.sort(key=attrgetter('index'))
 
-    for i in xrange(1, len(local_end_points) - 2):
+    for i in range(1, len(local_end_points) - 2):
         peak_value = (float(local_end_points[i].value) -
                       float(local_end_points[i - 1].value)) + \
                      (float(local_end_points[i].value) -
@@ -246,7 +246,7 @@ def calculate_roughness(histogram):
     local_end_points.sort(key=attrgetter('index'))
 
     roughness = 0.0
-    for i in xrange(len(local_end_points) - 1):
+    for i in range(len(local_end_points) - 1):
         difference = numpy.abs(float(local_end_points[i + 1].value) -
                                float(local_end_points[i].value))
         distance = float(local_end_points[i + 1].index) - \
